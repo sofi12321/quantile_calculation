@@ -19,12 +19,12 @@ A Greenwald & Khannan's algorithm (GK01) is based on the data structure named Su
 
 * $d_{i}=rank_{max}(v_{i})-rank_{min}(v_{i})$
 
-* $rank_{min}(v_{i})= \sum \limits _{j=0} ^{i} g_{j}$
+* $rank_{min}(v_{i})= \sum \limits_{j=0} ^{i} g_{j}$
 
-* $rank_{max}(v_{i})= d_{i} + \sum \limits _{j=0} ^{i} g_{j}$
+* $rank_{max}(v_{i})= d_{i} + \sum \limits_{j=0} ^{i} g_{j}$
 
 
-<!-- !!! * $err=\frac{\max \limits _{j \in N} (g_{j}+d_{j})}{2}$
+<!-- !!! * $err=\frac{\max \limits_{j \in N} (g_{j}+d_{j})}{2}$
 
 * $rank(v_{i}) - err <= rank_{min}(v_{i}) <= rank(v_{i}) <= rank_{max}(v_{i}) <= rank(v_{i}) + err$ -->
 
@@ -32,16 +32,16 @@ A Greenwald & Khannan's algorithm (GK01) is based on the data structure named Su
 ### Algoritm explanation
 
 Insertion of the element based on 4 steps:
-1. Find position i to insert this element, where $ v_{i-1}≤element<v_{i}$;
+1. Find position i to insert this element, where $v_{i-1}≤element<v_{i}$;
 2. Set $g=1$ and $d=0$ for element that will be inserted in the head or tail of Summary, or $g=1$ and $d=g_i+d_i-1$ otherwise;
 3. Insert the element at $i$-th position with the right shift of elements with indexes $≥ i$;
 4. Increment the number of arrived elements.
 
 To use $\epsilon$-approximate $q$-th quantile, on each $2 \epsilon N$ step the deletion operation is performed:
-1. Look for all possible sequences in the summary, where $d_{i}+\sum \limits_{k=j}^{i} g_{k} ≤ 2 \epsilon N $ for $j<i$, $ j $ is minimal and $ i $ is maximal possible index. 
+1. Look for all possible sequences in the summary, where $d_{i}+\sum \limits_{k=j}^{i} g_{k} ≤ 2 \epsilon N$ for $j < i$, $j$ is minimal and $i$ is maximal possible index. 
 2. Each sequence will be replaced with the new entry  $[v_{i}, \sum \limits_{k=j}^{i} g_{k}, d_{i}]$. 
 
-To find $q$-th quantile, an algorithm calculates rank $r=⌊qN⌋$. For $r>N-\epsilon N$, the result is the last element in the summary, otherwise the answer is $v_{i} $ with minimum $i $ for which $rank_{max}(v_{i+1})> (q+\epsilon)N $.
+To find $q$-th quantile, an algorithm calculates rank $r=⌊qN⌋$. For $r>N-\epsilon N$, the result is the last element in the summary, otherwise the answer is $v_{i}$ with minimum $i$ for which $rank_{max}(v_{i+1})> (q+\epsilon)N$.
 
 
 ### Time and space consumption comparison
