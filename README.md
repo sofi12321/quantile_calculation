@@ -1,5 +1,7 @@
 # Implementation of an approximate quantile computation on large-scale data
-Realization of the Greenwald & Khanna's quantile algorithm
+Realization of the Greenwald & Khanna's quantile (GK01) algorithm from the research paper titled ["A Survey of Approximate Quantile Computation on Large-Scale Data"](https://arxiv.org/pdf/2004.08255.pdf).
+
+Project is implemented in February 2023
 
 ### Explanation of GK01 algorithm
 
