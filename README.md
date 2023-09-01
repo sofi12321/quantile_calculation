@@ -32,7 +32,7 @@ A Greenwald & Khannan's algorithm (GK01) is based on the data structure named Su
 ### Algoritm explanation
 
 Insertion of the element based on 4 steps:
-1. Find position i to insert this element, where $v_{i-1}≤element<v_{i}$;
+1. Find position i to insert this element, where $v_{i-1} ≤ element < v_{i}$;
 2. Set $g=1$ and $d=0$ for element that will be inserted in the head or tail of Summary, or $g=1$ and $d=g_i+d_i-1$ otherwise;
 3. Insert the element at $i$-th position with the right shift of elements with indexes $≥ i$;
 4. Increment the number of arrived elements.
